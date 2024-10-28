@@ -24,3 +24,45 @@ pip install -r requirements.txt
 
 ---
 
+
+## Docs
+- AI Image Detection Model: https://huggingface.co/spaces/umm-maybe/AI-image-detector
+  - HuggingFace Associated Space: https://huggingface.co/spaces/Organika/sdxl-detector
+- OpenAI API Docs: https://platform.openai.com/docs/api-reference/chat/create
+
+
+## \[UML\] Class Diagram
+Requires Code extension [Markdown PlantUML Preview by myml](https://marketplace.visualstudio.com/items?itemName=myml.vscode-markdown-plantuml-preview) to render.
+```plantuml
+@startuml
+class LlmProxy {
+   + model: Model
+   + system_prompt: str
+   + prompt(prompt: str, format: None | json) -> str
+}
+
+class ProfileValidator {
+   + model: Model
+   + system_prompt: str
+   - validate_text(text: str) -> float
+   - validate_image(image: str | PIL.Image) -> float
+   + validate(user_id: str) -> float
+   + validate(profile: json) -> float
+}
+
+class ImageDetector {
+   + model: Model
+   + validate_image(image: str | PIL.Image) -> float
+}
+
+ProfileValidator --|> LlmProxy
+ProfileValidator --|> ImageDetector
+
+enum Model {
+   GPT_4O
+   GPT_4O_MINI
+   IMAGE_DETECTOR
+}
+@enduml
+```
+
