@@ -46,6 +46,7 @@ class ProfileValidator {
    + system_prompt: str
    - validate_text(text: str) -> float
    - validate_image(image: str | PIL.Image) -> float
+   + prompt(prompt: str, format: None | json) -> str
    + validate(user_id: str) -> float
    + validate(profile: json) -> float
 }
