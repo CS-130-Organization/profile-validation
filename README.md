@@ -32,6 +32,8 @@ pip install -r requirements.txt
 
 
 ## \[UML\] Class Diagram
+![image](https://github.com/user-attachments/assets/2c555840-8e2f-404e-ab1c-e1e1438fed21)
+
 Requires Code extension [Markdown PlantUML Preview by myml](https://marketplace.visualstudio.com/items?itemName=myml.vscode-markdown-plantuml-preview) to render.
 ```plantuml
 @startuml
